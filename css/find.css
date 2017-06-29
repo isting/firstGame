@@ -1,0 +1,97 @@
+/*查找页面*/
+#find{
+    height: 100%;
+    background: white;
+}
+#find>.find_time{
+    height: 15%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+#find>.find_time>p{
+    vertical-align:middle;
+    display: inline-block;
+    color:red;
+    font-size: 20px;
+    font-weight: 700;
+}
+                                    /*图片*/
+.find_img{
+    height: 65%;
+    min-height: 275px;
+}
+.find_img>ul{
+    height: 70%;
+    min-height:224px;
+    overflow: hidden;
+}
+.find_img>ul>li{
+    height: 218px;
+    width: 320px;
+    margin:15px auto;
+}
+.find_img>ul>li>div{
+    float:left;
+    width: 50%;
+    height: 100%;
+    position:relative;
+}
+.find_img>ul>li>div>div{
+    position:absolute;
+    z-index: 1000;
+}
+.find_img>ul>li>div{
+    /*background-size:contain;*/
+}
+
+.find_img img{
+    width: 160px;
+    vertical-align: middle;
+}
+.find_img>.find_hint{
+    padding:0 6%;
+}
+.find_img>.find_hint div{
+    max-width:100%;
+    min-width:40%;
+    background: white;
+    height: 50px;
+    border-radius:4px;
+    padding-left:8px;
+    font:14px "微软雅黑";
+}
+                                    /*按钮*/
+.find_btn{
+    height:20%;
+    text-align: center;
+    border-top: 1px solid #000;
+}
+.find_btn p{
+    float:left;
+    padding:10px;
+}
+.find_btn button{
+    display: inline-block;
+     width: 100px;
+    height: 35px;
+    border-radius:8px;
+    font:16px '微软雅黑';
+    background:greenyellow;
+}
+.find_btn>div{
+    vertical-align:middle;
+    display: inline-block;
+}
+
+
+/*全局样式*/
+
+.borderColor{
+    border:2px solid red;
+}
+.bgColor{
+    background: skyblue;
+}
+
+
+

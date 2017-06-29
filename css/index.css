@@ -1,0 +1,65 @@
+                            /*头部复用代码*/
+.s_top{
+    height: 10%;
+    text-align: center;
+    background: grb(248,248,248);
+    font:16px "Microsoft YaHei";
+    border-bottom: 1px solid #ccc;
+}
+.s_top>h2{
+    vertical-align: middle;
+    display: inline-block;
+}
+#allPage{
+    height:90%;
+}
+body{
+    min-width: 320px;
+}
+                                /*主页*/
+/*主体*/
+#s_main{
+    background: pink;
+    height: 100%;
+    overflow: hidden;
+}
+#s_main>.s_rule{
+    height: 60%;
+    width: 200px;
+    padding-top:20%;
+    margin:0 auto;
+    font:14px/20px 'Microsoft YaHei';
+}
+#s_main h3{
+    padding:6px 0;
+    font-size: 16px;
+}
+#s_main>.s_rule p:nth-of-type(2){
+    color:rgb(110,72,49);
+    font-size:13px;
+}
+/*start buttom*/
+#s_main>.s_start{
+    height: 40%;
+    padding-top: 20%;
+    text-align:center;
+}
+#s_main a{
+    display: inline-block;
+    background: white;
+    /*display: inline-block;*/
+    width: 148px;
+    height: 48px;
+    line-height: 48px;
+    border-radius:8px;
+    cursor: pointer;
+}
+/*#s_main buttom:visited{
+    background: white;
+    color:black;
+}
+
+#s_main buttom:hover{
+    background: purple;
+    color:white;
+}*/

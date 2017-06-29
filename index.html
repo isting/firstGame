@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!--不识别电话号码-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="screen-orientation" content="portrait">
+    <title>美女来找茬呀！</title>
+</head>
+<link rel="stylesheet" href="css/public.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/find.css">
+<link rel="stylesheet" href="css/result.css">
+<script src="js/jquery.js"></script>
+<script src="js/data.js"></script>
+<script src="js/game.js"></script>
+<style>
+    .show {
+        display: block;
+    }
+    .hide {
+        display: none;
+    }
+
+</style>
+
+<body>
+    <div class="s_top">
+        <h2>档口网美女来找茬</h2>
+        <i></i>
+    </div>
+    <div id="allPage">
+        <!--start页面----------------------------------------------------------- -->
+
+        <div class="show" id="s_main">
+            <div class="s_rule">
+                <h3>游戏规则：</h3>
+                <p>试着找出图片的不同之处，每张图片中有四处细微的差别。</p>
+                <p>--By dangkou.net</p>
+            </div>
+            <div class="s_start">
+                <div>
+                    <a class="startGame">开始游戏</a>
+                </div>
+            </div>
+        </div>
+
+        <!--查找页面----------------------------------------------------------- -->
+        <div class="hide" id="find">
+            <div class="find_time">
+                <p>时间：<span id="countDown">50</span>秒&nbsp;&nbsp;分数：<span id="findGrade">0</span>分</p>
+                <i></i>
+            </div>
+
+            <div class="find_img">
+                <ul class="clearfix" id="switchImg">
+                    <li data="1" id="viewOne">
+                        <div class="find_left" id="find_l">
+                            <div>1</div>
+                            <div>1</div>
+                            <div>1</div>
+                            <div>1</div>
+                        </div>
+                        <div class="find_right" id="find_r">
+                            <div>1</div>
+                            <div>1</div>
+                            <div>1</div>
+                            <div>1</div>
+                        </div>
+                    </li>
+
+                    <li class="hide" data="2">
+                        <div class="find_left">
+                            <div>2</div>
+                            <div>2</div>
+                            <div>2</div>
+                            <div>2</div>
+                        </div>
+                        <div class="find_right">
+                            <div>2</div>
+                            <div>2</div>
+                            <div>2</div>
+                            <div>2</div>
+                        </div>
+                    </li>
+                    <li class="hide" data="3">
+                        <div class="find_left">
+                            <div>3</div>
+                            <div>3</div>
+                            <div>3</div>
+                            <div>3</div>
+                        </div>
+                        <div class="find_right">
+                            <div>3</div>
+                            <div>3</div>
+                            <div>3</div>
+                            <div>3</div>
+                        </div>
+                    </li>
+                    <li class="hide" data="4">
+                        <div class="find_left">
+                            <div>4</div>
+                            <div>4</div>
+                            <div>4</div>
+                            <div>4</div>
+                        </div>
+                        <div class="find_right">
+                            <div>4</div>
+                            <div>4</div>
+                            <div>4</div>
+                            <div>4</div>
+                        </div>
+                    </li>
+                    </li>
+                    <li class="hide" data="5">
+                        <div class="find_left">
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                        </div>
+                        <div class="find_right">
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                        </div>
+                    </li>
+                </ul>
+                <!--提示信息-->
+                <div class="find_hint">
+                    <div><span id="reminder">
+                        <p>准确找到图片上的四个同点</p>
+                        <p>找错一个扣5秒，不扣分，找对一个加五分</p>
+                        <p>一个有5局，分数累加，算出最终得分</p>
+                        </span></div>
+                </div>
+            </div>
+            <!--find_img-->
+
+            <div class="find_btn">
+                <div>
+                    <p><button id="gamePrompt">提示</button></p>
+                    <p><button class="nextGrounp">下一组</button></p>
+                </div>
+                <i></i>
+            </div>
+        </div>
+
+        <!--*****result结果页面******************************* -->
+        <div class="hide" id="result">
+            <div class="res_score">
+                <div class="res_score_left">
+                    <div>
+                        <p>分数：<strong id="allScore">0</strong> 分</p>
+                        <i></i>
+                    </div>
+                    <div>
+                        <p>用时：<strong id="allSecond">155</strong> 秒</p>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="res_score_r">
+                    <h2 class="performance">火眼金睛</h2>
+                    <i></i>
+                </div>
+            </div>
+
+            <div class="res_invite">
+                <div class="res_grade">
+                    <p>恭喜你！打败了全国 <span class="defeatN">99%</span> 的用户，我们还在招鉴黄师，come on！Join Us！</p>
+                </div>
+                <div class="res_btn">
+                    <ul>
+                        <li><button id="playAgain">再玩一次</button></li>
+                        <li><button>关注获得提示</button></li>
+                        <li><button id="attentionGame">分享到朋友圈</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--allPage-->
+    <div class="masking hide">
+         <div class="dim"></div>
+        <div class="maskFocus"></div>
+    </div>
+   
+</body>
+</html>
