@@ -1,17 +1,7 @@
-                            /*头部复用代码*/
-.s_top{
-    height: 10%;
-    text-align: center;
-    background: grb(248,248,248);
-    font:16px "Microsoft YaHei";
-    border-bottom: 1px solid #ccc;
-}
-.s_top>h2{
-    vertical-align: middle;
-    display: inline-block;
-}
+   
 #allPage{
-    height:90%;
+    height:100%;
+    width: 100%;
 }
 body{
     min-width: 320px;
@@ -19,47 +9,104 @@ body{
                                 /*主页*/
 /*主体*/
 #s_main{
-    background: pink;
+    background: #343DC0;
     height: 100%;
     overflow: hidden;
 }
 #s_main>.s_rule{
-    height: 60%;
-    width: 200px;
-    padding-top:20%;
-    margin:0 auto;
-    font:14px/20px 'Microsoft YaHei';
+    height: 45%;
+    overflow: hidden;
+    position: relative;
 }
-#s_main h3{
-    padding:6px 0;
-    font-size: 16px;
+#s_main .startBanner{
+    position:absolute;
+    top:0;
+    width:100%;
+    height: 100%;
+    line-height: 25px;
+    z-index: 10;
+    padding:35px 55px 45px;
+    font-size: 1rem;
 }
-#s_main>.s_rule p:nth-of-type(2){
-    color:rgb(110,72,49);
-    font-size:13px;
-}
-/*start buttom*/
-#s_main>.s_start{
-    height: 40%;
-    padding-top: 20%;
-    text-align:center;
-}
-#s_main a{
-    display: inline-block;
-    background: white;
-    /*display: inline-block;*/
-    width: 148px;
-    height: 48px;
-    line-height: 48px;
-    border-radius:8px;
-    cursor: pointer;
-}
-/*#s_main buttom:visited{
-    background: white;
-    color:black;
+.s_rule img{
+    width: 100%;
+    height: 100%;
+    padding:20px;
 }
 
-#s_main buttom:hover{
-    background: purple;
+
+/*start buttom*/
+#s_main>.s_start{
+    position:relative;
+    height: 55%;
+    overflow: hidden;
+}
+/*三个圈*/
+#s_main>.s_start>div{
+    position:absolute;
+    left:50%;
+    top:50%;
+    border-radius: 50%;
+}
+/*小点*/
+#s_main>.s_start>div>div{
+    width: 10px;
+    height: 10px;
+    background: rgb(2,254,231);
+    position: absolute;
+    top:50%;
+    border-radius: 50%;
+    left:-5px;
+}
+/*最外圈*/
+.s_start>.startBox1{
+    width: 240px;
+    height: 240px;
+    margin-left:-120px;
+    margin-top:-120px;
+    border: 3px solid rgb(0,172,234);
+}
+/*中间圈*/
+.s_start>.startBox2{
+    width: 190px;
+    height: 190px;
+    margin-left:-95px;
+    margin-top:-95px;
+    z-index: 10;
+    border: 1px solid rgb(0,172,234);
+}
+#s_main .s_start>.startBox3{
+    width: 150px;
+    height: 150px;
+    background: rgb(0,172,234);
+    margin-left:-75px;
+    margin-top:-75px;
+    z-index: 11;
+    text-align: center;
+    border: 8px solid rgb(2,136,209);
+}
+.s_start>.startBox3>a{
+    display: inline-block;
+    vertical-align: middle;
     color:white;
-}*/
+    font:26px "楷体";
+    margin:8px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/*动画*/
+.loaderFast {
+  animation: loader 3s linear infinite;  /* 名字 时间  速度  循环方式 */
+}
+.loaderSlow {
+  animation: loader 5s linear infinite;  
+}
+@keyframes loader {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform:rotateZ(-360deg);
+  }
+}
