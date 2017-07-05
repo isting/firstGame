@@ -1,5 +1,6 @@
 // 称号
 var designation;
+var resultImg;//结果图片
 function designationS(sn1) {
     var defeat = null;
     var designationNum = sn1;
@@ -9,53 +10,65 @@ function designationS(sn1) {
         case 0:
             designation = '呆若木鸡';
             defeat = '0.0001%';
+            resultImg = '1-0.jpg';
             break;
         case 1:
             designation = '目不暇接';
             defeat = '9.99%';
+            resultImg = '1-1.jpg';            
             break;
         case 2:
             designation = '眼花缭乱';
             defeat = '33.3%';
+            resultImg = '1-2.png'; 
             break;
         case 3:
             designation = '眼细如缝';
             defeat = '37.84%';
+            resultImg = '1-3.jpg'; 
             break;
         case 4:
             designation = '明眸善昧';
             defeat = '39.99%';
+            resultImg = '1-4.png'; 
             break;
         case 5:
             designation = '炯炯有神';
             defeat = '69%';
+            resultImg = '1-5.jpg'; 
             break;
         case 6:
             designation = '浓眉大眼';
             defeat = '70%';
+            resultImg = '1-6.jpg'; 
             break;
         case 7:
             designation = '耳聪目明';
             defeat = '80%';
+            resultImg = '1-7.jpg'; 
             break;
         case 8:
             designation = '洞若观火';
             defeat = '90%';
+            resultImg = '1-8.jpg'; 
             break;
         case 9:
             designation = '千里眼';
             defeat = '99.5%';
+            resultImg = '1-9.jpg'; 
             break;
         case 10:
             designation = '火眼金睛';
             defeat = '99.99%';
+            resultImg = '1-10.jpg'; 
             break;
         default:
             designation = '你看不见我哦';
             defeat = '数据出错啦 O(∩_∩)O~';
+            resultImg = 'notSee.jpg'; 
     }
-    $('.performance').text(designation);
-    $('.defeatN').text(defeat);
+    $('.resultName').text(designation);
+    // $('.defeatN').text(defeat);//超越百分数
 }
 
 // 图片位置数据
@@ -172,5 +185,3 @@ function randomImg() {
     randImgArr = randomNewArr;
 }
 randomImg();  /*生成随机数*/
-
-

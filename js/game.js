@@ -28,6 +28,8 @@ $(function () {
     });
     countNum(); //图片上的不通点，以及点击的数据
 
+    // 初始化提示
+    $('#reminder').html('提示：<strong>欢迎挑战美女来找茬！</strong>');
     // ***********************************************************************
     // tab切换
     function tab(numb) {
@@ -45,11 +47,9 @@ $(function () {
         for (var i = 0; i < img_G.length; i++) {
             $('#switchImg>li').eq(i).children('div').eq(0).css({
                 "background": "url('img/" + randImgArr[i][0] + "-1.jpg') no-repeat center"
-                // "backgroundSize":"contain",
             });
             $('#switchImg>li').eq(i).children('div').eq(1).css({
                 "background": "url('img/" + randImgArr[i][0] + "-3.jpg') no-repeat center"
-                // "backgroundSize":"contain",
             });
         }
     }
@@ -57,11 +57,13 @@ $(function () {
     // 切换图片
     var imgId = 1;
     var getID = 0;
+    
     function switchImg() {
         var arrLength = $('#switchImg')[0].children.length; //3
         getID++;
         pointer = 0; //初始化点击次数
-
+        // console.log(getID);
+        $('.screening').html('第'+ (getID+1) +'组'); //头部记录组数
         if (imgId < arrLength) {
             $('#switchImg').children('li').eq(imgId).show().siblings('li').hide();
 
@@ -73,7 +75,7 @@ $(function () {
             judge = [];//筛选数组
             ar = [];//对比数组
             barrier = true;
-            $('#reminder').html('提示：<strong style="color:red">加油哦！</strong>');
+            $('#reminder').html('提示：<strong style="color:white">加油哦！</strong>');
         } else {
             tab(3);
             getID = 0; //这是获得提示用的
@@ -81,8 +83,11 @@ $(function () {
             $('#allSecond').text(allTime);
             clearInterval(startGameTime);
             designationS(iii);
-
-            $('title').html('我在档口网玩美女来找茬，获得['+ designation +']称号')
+            $('title').html('人送外号【'+ designation +'】，快来挑战档口网美女来找茬！');
+            $('.resultImg').css({
+                "background":"url('../bg/" + resultImg + "') no-repeat center",
+                "backgroundSize":"cover"
+            })
         }
         imgId++;
     }
@@ -101,6 +106,17 @@ $(function () {
                 count--;
             }
             $('#countDown').text(count);
+            $('.timeSurplus').css('width', 100 * count / 51 + '%');
+            // 颜色
+            if (count > 35) {
+                $('.progress-bar').removeClass('red').addClass('green');
+            } else if (count <= 35 && count > 15) {
+                $('.progress-bar').removeClass('green').addClass('blue');
+            } else if (count <= 15 && count > 5) {
+                $('.progress-bar').removeClass('blue').addClass('orange');
+            } else if (count <= 5) {
+                $('.progress-bar').removeClass('blue').addClass('red');
+            }
         }, 1000);
     }
 
@@ -247,7 +263,7 @@ $(function () {
 
     } /* 单页点击*/
 
-// 提示功能
+    // 提示功能
     function gamePrompt() {
         var _newLeft = $('.find_left>div');
         var _newRight = $('.find_right>div');
@@ -270,13 +286,13 @@ $(function () {
     $('#gamePrompt').on('touchstart', function () {
         gamePrompt();
     })
-    
+
     // 分享功能
-    $('#attentionGame').on('click',function(){
-        $('.masking').removeClass('hide');
-        
+    $('#attentionGame').on('click', function () {
+            $('.masking').removeClass('hide');
     })
-    $('.masking').on('click',function(){
-         $('.masking').addClass('hide');
+    $('.masking').on('click', function () {
+        $('.masking').addClass('hide');
     })
+    // tab(3)
 }); //$(function(){})

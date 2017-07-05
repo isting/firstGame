@@ -92,6 +92,7 @@ i{
     position:absolute;
     top:0;
     left:0;
+    z-index: 10000;
 }
 .maskFocus{
     background:url(../img/electricity.png)no-repeat center;
@@ -100,5 +101,5 @@ i{
     position:absolute;
     right:20px;;
     top:20px;
-    z-index: 100;
+    z-index: 20000;
 }

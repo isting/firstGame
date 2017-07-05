@@ -18,15 +18,19 @@ body{
     overflow: hidden;
     position: relative;
 }
+#s_main h3{
+    font-size:1rem;
+}
 #s_main .startBanner{
     position:absolute;
     top:0;
     width:100%;
     height: 100%;
-    line-height: 25px;
+    line-height: 20px;
     z-index: 10;
     padding:35px 55px 45px;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    color:white;
 }
 .s_rule img{
     width: 100%;
@@ -46,7 +50,37 @@ body{
     position:absolute;
     left:50%;
     top:50%;
-    border-radius: 50%;
+      -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%; 
+    background-clip:padding-box;
+
+}
+
+#s_main>.s_start>div:nth-of-type(1){
+     -webkit-border-radius: 120px;
+    -moz-border-radius: 120px;
+    -ms-border-radius: 120px;
+    -o-border-radius: 120px;
+    border-radius: 120px; 
+}
+#s_main>.s_start>div:nth-of-type(2){
+     -webkit-border-radius: 95px;
+    -moz-border-radius: 95px;
+    -ms-border-radius: 95px;
+    -o-border-radius: 95px;
+    border-radius: 95px; 
+    background-clip: padding-box;
+}
+#s_main>.s_start>div:nth-of-type(3){
+     -webkit-border-radius: 75px;
+    -moz-border-radius: 75px;
+    -ms-border-radius: 75px;
+    -o-border-radius: 75px;
+    border-radius: 75px; 
+    background-clip:padding-box;
 }
 /*小点*/
 #s_main>.s_start>div>div{
@@ -55,8 +89,13 @@ body{
     background: rgb(2,254,231);
     position: absolute;
     top:50%;
-    border-radius: 50%;
     left:-5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 50%; 
+    
 }
 /*最外圈*/
 .s_start>.startBox1{
@@ -91,22 +130,64 @@ body{
     color:white;
     font:26px "楷体";
     margin:8px;
-    border-radius: 50%;
     text-decoration: none;
+     -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%; 
 }
 
 /*动画*/
 .loaderFast {
-  animation: loader 3s linear infinite;  /* 名字 时间  速度  循环方式 */
+   /* 名字 时间  速度  循环方式 */
+    -webkit-animation: loader 3s linear infinite;
+    -moz-animation: loader 3s linear infinite;
+    -ms-animation: loader 3s linear infinite;
+    -o-animation: loader 3s linear infinite;
+    animation: loader 3s linear infinite;
 }
 .loaderSlow {
-  animation: loader 5s linear infinite;  
+  /*animation: loader 5s linear infinite;*/
+    -webkit-animation: loader 5s linear infinite;
+    -moz-animation: loader 5s linear infinite;
+    -ms-animation: loader 5s linear infinite;
+    -o-animation: loader 5s linear infinite;
+    animation: loader 5s linear infinite;  
 }
 @keyframes loader {
   0% {
-    transform: rotateZ(0deg);
+    transform: rotateZ(0deg); 
   }
   100% {
-    transform:rotateZ(-360deg);
+    transform: rotateZ(-360deg); 
+  }
+}
+
+
+@-moz-keyframes loader {
+  0% {
+    -moz-transform: rotateZ(0deg);
+  }
+  100% {
+    -moz-transform: rotateZ(-360deg);
+  }
+}
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+  }
+}
+
+@-o-keyframes loader {
+  0% {
+    -o-transform: rotateZ(0deg);
+  }
+  100% {
+    -o-transform: rotateZ(-360deg);
   }
 }
